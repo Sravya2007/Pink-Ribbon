@@ -14,6 +14,7 @@
 ## **How to test?**
 - ### Clone or download this repository from GitHub to your local machine.
 - ### Install Node.js on your computer, if it is not already installed.
+- ### Go to the command line and navigate to the location where you saved the folder using `cd <FolderLocation>/<FolderName>`
 - ### Run the command `npm install` to install the project dependencies.
 - ### Install the Expo CLI globally by running the command `npm install -g expo-cli`.
 - ### Download the Expo Go app on your mobile device from the App Store or Google Play Store.
