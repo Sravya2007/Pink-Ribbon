@@ -12,7 +12,7 @@
 - ### 🩺 Analysis of test results and showing nearest doctors
 
 ## **How to test?**
-- ### Clone or download this repository from GitHub to your local machine.
+- ### Clone or download this repository from GitHub to your local machine (https://github.com/Sravya2007/Pink-Ribbon).
 - ### Install Node.js on your computer, if it is not already installed.
 - ### Go to the command line and navigate to the location where you saved the folder using `cd <FolderLocation>/<FolderName>`
 - ### Run the command `npm install` to install the project dependencies.
