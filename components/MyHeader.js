@@ -12,7 +12,7 @@ export default class MyHeader extends React.Component {
             onPress={() => this.props.navigation.toggleDrawer()}
             />}
             backgroundColor="#a60545"
-            centerComponent={{ text: "Pink Ribbon", style: {color: '#ffffff', fontSize: RFValue(30), fontWeight:"bold"} }}/>
+            centerComponent={{ text: "PinkRibbon", style: {color: '#ffffff', fontSize: RFValue(30), fontWeight:"bold"} }}/>
         )
     }
 }

@@ -160,7 +160,7 @@ class Questionnaire extends Component {
         <View style={styles.container}>
           <Header
             centerComponent={{
-              text: "Pink Ribbon",
+              text: "PinkRibbon",
               style: {
                 color: '#ffffff',
                 fontSize: RFValue(30),
@@ -268,13 +268,21 @@ const styles = StyleSheet.create({
   },
   answerButton: {
     backgroundColor: '#eb4a8b',
-    paddingVertical: 10,
-    paddingHorizontal: 20,
-    margin: 20,
-    borderRadius: 10,
+    paddingVertical: RFValue(10),
+    margin: RFValue(10),
+    borderRadius: RFValue(10),
     minWidth: RFValue(150),
     alignItems: 'center',
     justifyContent: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: RFValue(0),
+      height: RFValue(3),
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
   },
   answerText: {
     color: '#fff',
@@ -298,7 +306,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     position: 'absolute',
     bottom: 20,
-    left: 20
+    left: 20,
   },
   backButtonText: {
     color: '#a60545',
@@ -315,11 +323,20 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     borderWidth: 1,
-    borderColor: 'gray',
+    borderColor: '#a60545',
     borderRadius: 5,
     paddingHorizontal: 10,
     paddingVertical: 5,
-    minWidth: 200
+    minWidth: 200,
+    shadowColor: '#000',
+    shadowOffset: {
+      width: RFValue(0),
+      height: RFValue(3),
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
   },
   icon: {
     marginRight: 10,

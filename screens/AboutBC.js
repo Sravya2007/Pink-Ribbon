@@ -34,8 +34,20 @@ export default class AboutBC extends React.Component {
                         <Text style={styles.text}>● Secretion of a new fluid.</Text>
                         <Text style={styles.text}>● A new vein popping out.</Text>
                         </View>
+
                         <Text style = {styles.heading}>REMOVING FEAR</Text>
                         <Text style = {styles.text}>Thinking “breast cancer won’t happen to me” is a risk no woman should take. It is our life and no one can protect it better than us. Thus, it is important for every woman to be armed with basic knowledge of signs, symptoms, risk factors and screening for early diagnosis of disease.</Text>
+                        
+                        <Text style = {styles.heading}>WHO GETS IT?</Text>
+                        <Text style = {styles.text}>Just like any other cancer, breast cancer results from DNA mutations that instruct your cells to grow out of control. In this case, it targets the cells in the breast tissue. </Text>
+                        <Text style = {styles.text}>Risk factors that play in a role in developing this type of cancer:</Text>
+                        <View>
+                        <Text style={styles.text}>● One of the major risk factors is being a female. That doesn’t mean men don’t get it. Men account for 1% of all cases.</Text>
+                        <Text style={styles.text}>● Another factor is age. The older you get, the more likely you are to develop breast cancer.</Text>
+                        <Text style={styles.text}>● A history of breast cancer increases your risk too. That includes, your own personal history, i.e., if you’ve had it before, and your family history. If breast cancer is common in your family tree, you are more likely to develop breast cancer.</Text>
+                        <Text style={styles.text}>● Scientists have identified several genes that if inherited, are more likely to cause breast cancer. There are many, but the most common and well studied are, BRCA1 and BRCA2. While they don’t make breast cancer a certainty, your chances of developing it are high. </Text>
+                        <Text style={styles.text}>● Beyond that, radiation exposure at any point in your life, increases your chances of breast cancer.</Text>
+                        </View>
                     </View>
                 </ScrollView>
             </View>

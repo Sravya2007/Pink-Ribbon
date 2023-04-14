@@ -83,14 +83,23 @@ render() {
     <View style = {styles.container}>
       <MyHeader navigation = {this.props.navigation}/>
       <Input
-      leftIcon = {<FontAwesome name='user' color='#a60545' size={RFValue(25)}/>}
+      leftIcon = {<FontAwesome name='user' color='#a60545' size={RFValue(25)} style = {{marginLeft: RFValue(5)}}/>}
       containerStyle = {{marginTop: 15}}
       placeholder = 'Name'
       placeholderTextColor = '#a60545'
       label = 'Name'
       labelStyle = {{fontSize: RFValue(20), color: '#a60545'}}
-      inputContainerStyle = {{borderWidth: 1}}
-      inputStyle = {{fontSize: RFValue(20), color: '#a60545', marginLeft: 5}}
+      inputContainerStyle={{
+        borderWidth: 0,
+        borderBottomWidth: 0,
+        borderRadius: RFValue(10),
+        backgroundColor: '#f5eaf2',
+      }}
+      inputStyle={{
+        fontSize: RFValue(20),
+        color: '#a60545',
+        marginLeft: RFValue(5)
+      }}
       onChangeText = {(text)=>{
       this.setState({
         Name: text
@@ -103,14 +112,17 @@ render() {
         placeholder="DOB"
         placeholderTextColor="#000"
         style={{
-            fontSize: RFValue(20),
-            color: "#000",
-            borderWidth: 1,
-            backgroundColor: "#fff",
-            paddingHorizontal: RFValue(10),
-            paddingVertical: RFValue(5),
-            margin: 10,
-            opacity: 0.5
+          fontSize: RFValue(20),
+          color: "#a60545",
+          borderWidth: 1,
+          backgroundColor: "#fff",
+          paddingHorizontal: RFValue(10),
+          paddingVertical: RFValue(5),
+          margin: 10,
+          opacity: 0.5,
+          borderRadius: RFValue(10),
+          borderWidth: 0,
+          borderBottomWidth: 0,
         }}
         value={this.state.DOB}
         editable={false}
@@ -121,7 +133,7 @@ render() {
         marginTop: 0,
         marginBottom: 10
         }}>
-        <Text style = {styles.buttonText}>Select DOB</Text>
+        <Text style = {styles.buttonText}>Change DOB</Text>
         </TouchableOpacity>
         <DateTimePickerModal
         isVisible={this.state.isDatePickerVisible}
@@ -130,14 +142,23 @@ render() {
         onCancel={this.hideDatePicker}
         />
       <Input
-      leftIcon = {<FontAwesome name='envelope-o' color='#a60545' size={RFValue(25)}/>}
+      leftIcon = {<FontAwesome name='envelope-o' color='#a60545' size={RFValue(25)} style = {{marginLeft: RFValue(5)}}/>}
       containerStyle = {{marginTop: 15}}
       placeholder = 'email'
       placeholderTextColor = '#a60545'
-      label = 'email'
+      label = 'email address'
       labelStyle = {{fontSize: RFValue(20), color: '#a60545'}}
-      inputContainerStyle = {{borderWidth: 1}}
-      inputStyle = {{fontSize: RFValue(20), color: '#a60545', marginLeft: 5}}
+      inputContainerStyle={{
+        borderWidth: 0,
+        borderBottomWidth: 0,
+        borderRadius: RFValue(10),
+        backgroundColor: '#f5eaf2',
+      }}
+      inputStyle={{
+        fontSize: RFValue(20),
+        color: '#a60545',
+        marginLeft: RFValue(5)
+      }}
       onChangeText = {(text)=>{
       this.setState({
         email: text
@@ -145,6 +166,13 @@ render() {
       }}
       value = {this.state.email}
       />
+      <TouchableOpacity
+      style = {styles.button}
+      onPress = {() => {
+        this.save()
+      }}>
+        <Text style = {styles.buttonText}>Save</Text>
+      </TouchableOpacity>
       <TouchableOpacity
       onPress = {() => {
         firebase.auth().signOut().then(() => {
@@ -156,13 +184,6 @@ render() {
       style = {styles.button}>
         <Text style = {styles.buttonText}>Logout</Text>
       </TouchableOpacity>
-      <TouchableOpacity
-      style = {styles.button}
-      onPress = {() => {
-        this.save()
-      }}>
-        <Text style = {styles.buttonText}>Save</Text>
-      </TouchableOpacity>
     </View>
   )
   }
@@ -173,19 +194,11 @@ container: {
     flex: 1,
     backgroundColor: '#f8acc6'
 },
-save: {
-alignSelf: 'center',
-alignItems: 'center',
-justifyContent: 'center',
-width: 330,
-height: 50,
-marginTop: 30
-},
 buttonText: {
-color: '#fff',
-fontSize: RFValue(18),
-fontWeight: 'bold',
-alignSelf: 'center'
+  color: '#fff',
+  fontSize: RFValue(18),
+  fontWeight: 'bold',
+  alignSelf: 'center'
 },
 button: {
     alignSelf: 'center',
@@ -194,7 +207,17 @@ button: {
     width: 330,
     height: 50,
     backgroundColor: '#eb4a8b',
-    marginTop: 20
+    marginTop: 20,
+    borderRadius: RFValue(25),
+    shadowColor: '#000',
+    shadowOffset: {
+      width: RFValue(0),
+      height: RFValue(3),
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
 },
 label: {
   fontSize: RFValue(20),

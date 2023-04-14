@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Alert, Modal, ScrollView, TouchableOpacity, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, Alert, Modal, ScrollView, TouchableOpacity, Image, TextInput, KeyboardAvoidingView, Platform } from 'react-native';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
@@ -121,26 +121,42 @@ export default class SignUp extends React.Component {
                       isModalVisible: false
                     })
                   }}/>
-                  <View style = {styles.titleView}>
+
                     <Text style = {styles.title}>Sign Up</Text>
-                  </View>
-                  <Input
-                  placeholder = 'Name'
-                  placeholderTextColor = '#a60545'
-                  labelStyle = {{fontSize: RFValue(20), color: '#000'}}
-                  inputContainerStyle = {{borderWidth: 1, backgroundColor: '#fff'}}
-                  inputStyle = {{fontSize: RFValue(20), color: '#a60545'}}
-                  onChangeText = {(text)=>{
-                    this.setState({
-                      name: text
-                    })
-                  }}/>
+                    <Input
+                    placeholder='Name'
+                    placeholderTextColor='#a60545'
+                    inputContainerStyle={{
+                      borderWidth: 0,
+                      borderBottomWidth: 0,
+                      borderRadius: RFValue(10),
+                      backgroundColor: '#f5eaf2',
+                    }}
+                    inputStyle={{
+                      fontSize: RFValue(20),
+                      color: '#a60545',
+                      marginLeft: RFValue(5)
+                    }}
+                    onChangeText={(text) => {
+                      this.setState({
+                        name: text
+                      })
+                    }}
+                  />
                   <Input
                   placeholder = 'email address'
                   placeholderTextColor = '#a60545'
-                  labelStyle = {{fontSize: RFValue(20), color: '#000'}}
-                  inputContainerStyle = {{borderWidth: 1, backgroundColor: '#fff'}}
-                  inputStyle = {{fontSize: RFValue(20), color: '#a60545'}}
+                  inputContainerStyle={{
+                    borderWidth: 0,
+                    borderBottomWidth: 0,
+                    borderRadius: RFValue(10),
+                    backgroundColor: '#f5eaf2',
+                  }}
+                  inputStyle={{
+                    fontSize: RFValue(20),
+                    color: '#a60545',
+                    marginLeft: RFValue(5)
+                  }}
                   keyboardType = {"email-address"}
                   onChangeText = {(text)=>{
                     this.setState({
@@ -159,7 +175,10 @@ export default class SignUp extends React.Component {
                       paddingHorizontal: RFValue(10),
                       paddingVertical: RFValue(5),
                       margin: 10,
-                      opacity: 0.5
+                      opacity: 0.5,
+                      borderRadius: RFValue(10),
+                      borderWidth: 0,
+                      borderBottomWidth: 0,
                     }}
                     value={this.state.DOB}
                     editable={false}
@@ -182,9 +201,17 @@ export default class SignUp extends React.Component {
                   <Input
                   placeholder = 'Password'
                   placeholderTextColor = '#a60545'
-                  labelStyle = {{fontSize: RFValue(20), color: '#000'}}
-                  inputContainerStyle = {{borderWidth: 1, backgroundColor: '#fff'}}
-                  inputStyle = {{fontSize: RFValue(20), color: '#a60545'}}
+                  inputContainerStyle={{
+                    borderWidth: 0,
+                    borderBottomWidth: 0,
+                    borderRadius: RFValue(10),
+                    backgroundColor: '#f5eaf2',
+                  }}
+                  inputStyle={{
+                    fontSize: RFValue(20),
+                    color: '#a60545',
+                    marginLeft: RFValue(5)
+                  }}
                   secureTextEntry = {true}
                   onChangeText = {(text)=>{
                     this.setState({
@@ -194,9 +221,17 @@ export default class SignUp extends React.Component {
                   <Input
                   placeholder = 'Confirm Password'
                   placeholderTextColor = '#a60545'
-                  labelStyle = {{fontSize: RFValue(20), color: '#000'}}
-                  inputContainerStyle = {{borderWidth: 1, backgroundColor: '#fff'}}
-                  inputStyle = {{fontSize: RFValue(20), color: '#a60545'}}
+                  inputContainerStyle={{
+                    borderWidth: 0,
+                    borderBottomWidth: 0,
+                    borderRadius: RFValue(10),
+                    backgroundColor: '#f5eaf2',
+                  }}
+                  inputStyle={{
+                    fontSize: RFValue(20),
+                    color: '#a60545',
+                    marginLeft: RFValue(5)
+                  }}
                   secureTextEntry = {true}
                   onChangeText = {(text)=>{
                     this.setState({
@@ -217,13 +252,14 @@ export default class SignUp extends React.Component {
 
     render() {
         return(
+          <KeyboardAvoidingView behavior= {Platform.OS === 'ios' ? 'padding' : 'height'} style={{ flex: 1 }}>
           <ScrollView style = {{flex: 1, marginTop:45, backgroundColor: '#d8c3d1'}}>
               {this.showModal()}
               <Image
               source = {require('../assets/icon.png')}
               style = {styles.image}/>
               <Input
-                  containerStyle = {{marginTop: 15, width: RFValue(350)}}
+                  containerStyle = {{width: RFValue(350)}}
                   leftIcon = {<FontAwesome name='envelope-o' color='#a60545' size={RFValue(25)}/>}
                   inputStyle = {{fontSize: RFValue(23), color: '#a60545'}}
                   inputContainerStyle = {{borderColor: '#a60545', borderBottomWidth: 1.5}}
@@ -251,6 +287,7 @@ export default class SignUp extends React.Component {
                     })
                   }}
                 />
+              
 
               <TouchableOpacity
               style = {styles.button}
@@ -272,41 +309,49 @@ export default class SignUp extends React.Component {
                 }}
                 style = {{alignItems: 'center', marginTop: 20, color: '#000'}}>
                 <Text style = {{
-                  color: '#fc7ecd',
+                  color: '#ed127c',
                   fontSize: RFValue(18),
                   fontWeight: 'bold',
                   alignSelf: 'center'
                 }}>I FORGOT MY PASSWORD</Text>
               </TouchableOpacity>
               </ScrollView>
+              </KeyboardAvoidingView>
         )
     }
 }
 
 const styles = StyleSheet.create({
   image: {
-    width: RFValue(400),
-    height: RFValue(300),
+    width: RFValue(370),
+    height: RFValue(270),
     alignSelf: 'center'
   },
   title: {
     fontSize: RFValue(40),
     color: '#a60545',
-    fontWeight: 'bold'
-  },
-  titleView: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    marginTop: 15
+    fontWeight: 'bold',
+    alignSelf: 'center',
+    marginBottom: RFValue(10)
   },
   button: {
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    width: 330,
-    height: 50,
+    width: RFValue(300),
+    height: RFValue(50),
     backgroundColor: '#a60545',
-    marginTop: 20
+    marginTop: RFValue(20),
+    borderRadius: RFValue(25),
+    shadowColor: '#000',
+    shadowOffset: {
+      width: RFValue(0),
+      height: RFValue(3),
+    },
+    shadowOpacity: 0.27,
+    shadowRadius: 4.65,
+
+    elevation: 6,
   },
   buttonText: {
     color: '#fff',

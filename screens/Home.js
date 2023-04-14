@@ -69,7 +69,17 @@ const styles = StyleSheet.create({
         height: RFValue(100),
         backgroundColor: '#eb4a8b',
         margin: 10,
-        paddingHorizontal: 20
+        paddingHorizontal: 20,
+        borderRadius: RFValue(10),
+        shadowColor: '#000',
+        shadowOffset: {
+          width: RFValue(0),
+          height: RFValue(3),
+        },
+        shadowOpacity: 0.27,
+        shadowRadius: 4.65,
+    
+        elevation: 6,
     },
     buttonText: {
         color: '#fff',

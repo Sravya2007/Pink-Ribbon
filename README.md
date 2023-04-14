@@ -1,4 +1,4 @@
-# **Pink Ribbon**
+# **PinkRibbon**
 
 ## **Intro**
 ### A simple, unique app to spread awareness among women about breast cancer. We empower women to take charge of their health by encouraging breast self examination (BSE) every month.
@@ -18,7 +18,7 @@
 - ### Run the command `npm install` to install the project dependencies.
 - ### Install the Expo CLI globally by running the command `npm install -g expo-cli`.
 - ### Download the Expo Go app on your mobile device from the App Store or Google Play Store.
-- ### Launch the Expo Go app on your mobile device and scan the QR code displayed in the terminal or browser window that opened after running `expo start`.
+- ### Launch the Expo Go app on your mobile device and scan the QR code displayed in the terminal or browser window that opened after running `npx expo start`.
 - ### Wait for the app to build and load on your mobile device. You should now be able to test the app on your device.
 ### **Note:** You may not be able to test the app because config.js (containing firebase configuration) is missing. You can create a new firebase app, or if the config.js file has been shared with you, add it to the project directory and then test the app.
 

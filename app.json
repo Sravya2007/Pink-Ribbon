@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Pink Ribbon",
-    "slug": "Pink Ribbon",
+    "name": "PinkRibbon",
+    "slug": "PinkRibbon",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/favicon.png",

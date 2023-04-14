@@ -21,9 +21,9 @@ export default class Prevention extends React.Component {
                 <ScrollView style = {{width: '100%', marginTop: 80}}>
                     <View style = {{alignItems: 'center'}}>
                         <Text style = {styles.heading}>HEALTHY LIFESTYLE</Text>
-                        <Text style = {styles.text}>Healthy lifestyle choices are linked to a lower risk of some cancers and other health conditions such as heart disease, diabetes and osteoporosis.</Text>
-                        <Text style = {styles.text}>Being physically active, achieving and maintaining a healthy weight, limiting alcohol and to a lesser degree, eating fruits and vegetables and not smoking are linked to a lower risk of breast cancer.</Text>
-                        <Text style = {styles.text}>Research shows organic foods are no more nutritious or better for you than foods farmed by conventional methods. Some people prefer to eat organic foods. However, people who eat organic meat, dairy, fruits and vegetables do not appear to have a lower risk of breast cancer than people who don’t eat organic foods.</Text>
+                        <Text style = {styles.text}>● Healthy lifestyle choices are linked to a lower risk of some cancers and other health conditions such as heart disease, diabetes and osteoporosis.</Text>
+                        <Text style = {styles.text}>● Being physically active, achieving and maintaining a healthy weight, limiting alcohol and to a lesser degree, eating fruits and vegetables and not smoking are linked to a lower risk of breast cancer.</Text>
+                        <Text style = {styles.text}>● Research shows organic foods are no more nutritious or better for you than foods farmed by conventional methods. Some people prefer to eat organic foods. However, people who eat organic meat, dairy, fruits and vegetables do not appear to have a lower risk of breast cancer than people who don’t eat organic foods.</Text>
                     </View>
                 </ScrollView>
             </View>

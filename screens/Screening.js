@@ -7,13 +7,14 @@ import step2 from '../assets/screeningsteps/step2.png';
 import step3 from '../assets/screeningsteps/step3.png';
 import step4 from '../assets/screeningsteps/step4.png';
 import { RFValue } from 'react-native-responsive-fontsize';
-import { RadioButton } from 'react-native-paper';
+import { RadioButton, Checkbox } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
 import db from '../config';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import { ScrollView } from 'react-native-gesture-handler';
+import { WebView } from 'react-native-webview';
 
 const SCREENING_STEPS = [
   { image: step1, description: 'Step 1: Stand before a mirror. Compare both breasts for any difference in size, shape or colour.' },
@@ -96,9 +97,12 @@ const Screening = () => {
   return (
     <View style={styles.container}>
       {stepIndex === -1 && !showQuestion && (
-        <TouchableOpacity style={styles.videoButton} onPress={handleVideoPress}>
-          <Text style={styles.videoButtonText}>Watch Video of Breast Self Examination</Text>
-        </TouchableOpacity>
+        <View style = {styles.videoButton}>
+        <WebView
+        javaScriptEnabled={true}
+        source={{uri: 'https://www.youtube.com/embed/be7rT_Q1a3c'}}
+      />
+        </View>
       )}
       {stepIndex === -1 && !showQuestion && (
         <TouchableOpacity style={styles.startButton} onPress={handleStartPress}>
@@ -112,12 +116,12 @@ const Screening = () => {
           <View style={styles.arrowContainer}>
             {stepIndex > 0 && (
               <TouchableOpacity onPress={handlePrevStep}>
-                <MaterialCommunityIcons name="chevron-left" size={32} color="#fc4ebb" />
+                <MaterialCommunityIcons name="chevron-left" size={50} color="#a60545" />
               </TouchableOpacity>
             )}
             {stepIndex < SCREENING_STEPS.length - 1 && (
               <TouchableOpacity onPress={handleNextStep}>
-                <MaterialCommunityIcons name="chevron-right" size={32} color="#fc4ebb" />
+                <MaterialCommunityIcons name="chevron-right" size={50} color="#a60545" />
               </TouchableOpacity>
             )}
           </View>
@@ -248,10 +252,9 @@ const styles = StyleSheet.create({
       backgroundColor: '#f8acc6'
     },
     videoButton: {
-      backgroundColor: '#ed127c',
-      padding: RFValue(10),
-      borderRadius: RFValue(5),
-      marginBottom: RFValue(20),
+      width: '100%',
+      height: RFValue(200),
+      marginBottom: RFValue(16),
     },
     videoButtonText: {
       color: '#fff',
@@ -291,13 +294,23 @@ const styles = StyleSheet.create({
     startButton: {
       backgroundColor: '#ed127c',
       padding: RFValue(10),
-      borderRadius: RFValue(5),
+      borderRadius: RFValue(10),
       marginBottom: RFValue(20),
+      shadowColor: '#000',
+      shadowOffset: {
+        width: RFValue(0),
+        height: RFValue(3),
+      },
+      shadowOpacity: 0.27,
+      shadowRadius: 4.65,
+  
+      elevation: 6,
     },
     startButtonText: {
       color: '#fff',
       fontWeight: 'bold',
       textAlign: 'center',
+      fontSize: RFValue(16)
     },
     questionContainer: {
       flex: 1,
